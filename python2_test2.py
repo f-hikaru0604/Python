@@ -6,6 +6,12 @@ def leap(year):
     else:
         result = '閏年ではないです。'
     return result
+
 print('西暦4桁を入力してください')
-year = int(input())
-print(leap(year))
+year0 = int(input())
+i = -1
+while i <= 1 :
+    year = year0 + i
+    print(str(year),'年は',leap(year))
+    i += 1
+
