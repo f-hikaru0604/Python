@@ -1,17 +1,21 @@
+import datetime
 def leap(year):
     if year % 100 == 0 and year % 400 != 0:
-        result = '閏年ではないです。'
+        result = False
     elif year % 4 == 0:
-        result = '閏年です。'
+        result = True
     else:
-        result = '閏年ではないです。'
+        result = False
     return result
 
-print('西暦4桁を入力してください')
-year0 = int(input())
+today = datetime.date.today()
+this_year = today.year
 i = -1
 while i <= 1 :
-    year = year0 + i
-    print(str(year),'年は',leap(year))
+    year = this_year + i
+    if leap(year):
+        print(str(year),'年は閏年です。')
+    else:
+        print(str(year),'年は閏年ではないです。')
     i += 1
 
